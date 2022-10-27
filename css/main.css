@@ -3,59 +3,50 @@
 /* Animations */
 @keyframes background-ring-1 {
   to {
-    width: 125rem;
-    height: 125rem;
+    scale: 1.25;
     opacity: 0;
   }
 }
 @keyframes background-ring-2 {
   to {
-    width: 100rem;
-    height: 100rem;
+    scale: 1.33;
   }
 }
 @keyframes background-ring-3 {
   to {
-    width: 75rem;
-    height: 75rem;
+    scale: 1.5;
   }
 }
 @keyframes background-ring-4 {
   to {
-    width: 50rem;
-    height: 50rem;
+    scale: 2;
   }
 }
 @keyframes background-ring-5 {
   to {
-    width: 25rem;
-    height: 25rem;
+    scale: 25;
     opacity: 0.05;
   }
 }
 @keyframes avatar-ring-1 {
   to {
-    width: 15.625rem;
-    height: 15.625rem;
+    scale: 1.25;
     opacity: 0;
   }
 }
 @keyframes avatar-ring-2 {
   to {
-    width: 12.5rem;
-    height: 12.5rem;
+    scale: 1.33;
   }
 }
 @keyframes avatar-ring-3 {
   to {
-    width: 9.375rem;
-    height: 9.375rem;
+    scale: 1.5;
   }
 }
 @keyframes avatar-ring-4 {
   to {
-    width: 6.25rem;
-    height: 6.25rem;
+    scale: 2;
   }
 }
 /* Styles */
@@ -89,6 +80,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transform-origin: 0 0;
   border-radius: 50%;
   background-color: #bbb;
   opacity: 0.05;
@@ -119,8 +111,8 @@ body {
 }
 
 .background-ring-5 {
-  width: 0rem;
-  height: 0rem;
+  width: 1rem;
+  height: 1rem;
   opacity: 0;
   animation: background-ring-5 2.5s linear infinite;
 }
@@ -191,6 +183,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transform-origin: 0 0;
   border-radius: 50%;
   background-color: #DF0E62;
   opacity: 0.1;
@@ -227,7 +220,7 @@ body {
 
 .avatar-loading .loading-ring {
   transform: scale(1);
-  transition: transform 5s ease-in;
+  transition: transform 5s cubic-bezier(0.6, 0, 0.9, 0.6);
 }
 
 .avatar-loaded {
