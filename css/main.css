@@ -1,0 +1,285 @@
+/* Colors */
+/* Typography */
+/* Animations */
+@keyframes background-ring-1 {
+  to {
+    width: 125rem;
+    height: 125rem;
+    opacity: 0;
+  }
+}
+@keyframes background-ring-2 {
+  to {
+    width: 100rem;
+    height: 100rem;
+  }
+}
+@keyframes background-ring-3 {
+  to {
+    width: 75rem;
+    height: 75rem;
+  }
+}
+@keyframes background-ring-4 {
+  to {
+    width: 50rem;
+    height: 50rem;
+  }
+}
+@keyframes background-ring-5 {
+  to {
+    width: 25rem;
+    height: 25rem;
+    opacity: 0.05;
+  }
+}
+@keyframes avatar-ring-1 {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes avatar-ring-2 {
+  to {
+    width: 12.5rem;
+    height: 12.5rem;
+  }
+}
+@keyframes avatar-ring-3 {
+  to {
+    width: 9.375rem;
+    height: 9.375rem;
+  }
+}
+@keyframes avatar-ring-4 {
+  to {
+    width: 6.25rem;
+    height: 6.25rem;
+  }
+}
+/* Styles */
+html {
+  color: #333333;
+  background-color: #fff;
+  font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  line-height: 1.5;
+}
+
+body {
+  overflow: hidden;
+}
+
+.background-rings {
+  position: absolute;
+  z-index: 0;
+  width: 100rem;
+  height: 100rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.background-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: #bbb;
+  opacity: 0.05;
+}
+
+.background-ring-1 {
+  width: 100rem;
+  height: 100rem;
+  animation: background-ring-1 2.5s linear infinite;
+}
+
+.background-ring-2 {
+  width: 75rem;
+  height: 75rem;
+  animation: background-ring-2 2.5s linear infinite;
+}
+
+.background-ring-3 {
+  width: 50rem;
+  height: 50rem;
+  animation: background-ring-3 2.5s linear infinite;
+}
+
+.background-ring-4 {
+  width: 25rem;
+  height: 25rem;
+  animation: background-ring-4 2.5s linear infinite;
+}
+
+.background-ring-5 {
+  width: 0rem;
+  height: 0rem;
+  opacity: 0;
+  animation: background-ring-5 2.5s linear infinite;
+}
+
+.avatar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  cursor: pointer;
+}
+
+.avatar-picture {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #fff;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+.avatar-picture img {
+  width: 100%;
+  height: 100%;
+}
+
+.avatar-label {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -10px);
+  background-color: #fff;
+  padding: 5px 15px;
+  border: 1px solid #f5f5f5;
+  border-radius: 1rem;
+  font-weight: bold;
+  font-size: 0.875rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+
+.loading-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: #DF0E62;
+  opacity: 0.5;
+  width: 12.5rem;
+  height: 12.5rem;
+  transform-origin: center;
+}
+
+.avatar-rings {
+  position: absolute;
+  z-index: 0;
+  width: 12.5rem;
+  height: 12.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.avatar-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: #DF0E62;
+  opacity: 0.1;
+}
+
+.avatar-ring-1 {
+  width: 12.5rem;
+  height: 12.5rem;
+  animation: avatar-ring-1 1.5s linear infinite;
+}
+
+.avatar-ring-2 {
+  width: 9.375rem;
+  height: 9.375rem;
+  animation: avatar-ring-2 1.5s linear infinite;
+}
+
+.avatar-ring-3 {
+  width: 6.25rem;
+  height: 6.25rem;
+  animation: avatar-ring-3 1.5s linear infinite;
+}
+
+.avatar-ring-4 {
+  width: 3.125rem;
+  height: 3.125rem;
+  animation: avatar-ring-4 1.5s linear infinite;
+}
+
+.avatar-waiting .loading-ring {
+  transform: scale(0.3);
+  transition: transform 5s;
+}
+
+.avatar-loading .loading-ring {
+  transform: scale(1);
+  transition: transform 5s ease-in;
+}
+
+.avatar-loaded {
+  cursor: none;
+  pointer-events: none;
+}
+.avatar-loaded .loading-ring {
+  transform: scale(1.5);
+  transition: all 1s;
+  opacity: 0;
+}
+.avatar-loaded .avatar-ring {
+  opacity: 0;
+  transition: opacity 1s;
+}
+.avatar-loaded .avatar-label {
+  color: #fff;
+  padding-left: 2.25rem;
+  background: url("../img/wt.check.circle.svg") no-repeat 0.875rem center;
+  background-color: #DF0E62;
+}
+
+.avatar:nth-child(1) .avatar-ring,
+.avatar:nth-child(1) .loading-ring, .avatar:nth-child(1).avatar-loaded .avatar-label {
+  background-color: #DF0E62;
+}
+
+.avatar:nth-child(2) {
+  transform: translate(200px, 0);
+}
+.avatar:nth-child(2) .avatar-ring,
+.avatar:nth-child(2) .loading-ring, .avatar:nth-child(2).avatar-loaded .avatar-label {
+  background-color: #127681;
+}
+
+.avatar:nth-child(3) {
+  transform: translate(400px, 0);
+}
+.avatar:nth-child(3) .avatar-ring,
+.avatar:nth-child(3) .loading-ring, .avatar:nth-child(3).avatar-loaded .avatar-label {
+  background-color: #FAC70B;
+}
+
+.avatar:nth-child(4) {
+  transform: translate(600px, 0);
+}
+.avatar:nth-child(4) .avatar-ring,
+.avatar:nth-child(4) .loading-ring, .avatar:nth-child(4).avatar-loaded .avatar-label {
+  background-color: #EC6750;
+}
+
+.avatar:nth-child(5) .avatar-ring,
+.avatar:nth-child(5) .loading-ring, .avatar:nth-child(5).avatar-loaded .avatar-label {
+  background-color: #07689F;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,125 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <title>Transfer Sandbox</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+  <!-- Background rings -->
+
+  <div class="background-rings">
+    <div class="background-ring background-ring-1"></div>
+    <div class="background-ring background-ring-2"></div>
+    <div class="background-ring background-ring-3"></div>
+    <div class="background-ring background-ring-4"></div>
+    <div class="background-ring background-ring-5"></div>
+  </div>
+
+
+  <!-- Avatars -->
+
+  <div class="avatar avatar-waiting">
+    <div class="avatar-rings">
+      <div class="loading-ring"></div>
+      <div class="avatar-ring avatar-ring-1"></div>
+      <div class="avatar-ring avatar-ring-2"></div>
+      <div class="avatar-ring avatar-ring-3"></div>
+      <div class="avatar-ring avatar-ring-4"></div>
+    </div>
+
+    <div class="avatar-picture">
+      <img src="img/nickie.png" draggable="false" alt="">
+    </div>
+
+    <div class="avatar-label">
+      Nickie
+    </div>
+  </div>
+
+  <div class="avatar avatar-waiting">
+    <div class="avatar-rings">
+      <div class="loading-ring"></div>
+      <div class="avatar-ring avatar-ring-1"></div>
+      <div class="avatar-ring avatar-ring-2"></div>
+      <div class="avatar-ring avatar-ring-3"></div>
+      <div class="avatar-ring avatar-ring-4"></div>
+    </div>
+    
+    <div class="avatar-picture">
+      <img src="img/pauline.jpeg" draggable="false" alt="">
+    </div>
+
+    <div class="avatar-label">
+      Pauline
+    </div>
+  </div>
+
+  <div class="avatar avatar-waiting">
+    <div class="avatar-rings">
+      <div class="loading-ring"></div>
+      <div class="avatar-ring avatar-ring-1"></div>
+      <div class="avatar-ring avatar-ring-2"></div>
+      <div class="avatar-ring avatar-ring-3"></div>
+      <div class="avatar-ring avatar-ring-4"></div>
+    </div>
+    
+    <div class="avatar-picture">
+      <img src="img/maxi.jpeg" draggable="false" alt="">
+    </div>
+
+    <div class="avatar-label">
+      Maxi
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  
+  <script>
+    $(document).ready(function() {
+
+      $('.avatar-waiting').mousedown(function(e) {
+        $(this).removeClass('avatar-waiting').addClass('avatar-loading'); // Switch classes
+      }).mouseup(function(e) {
+        $(this).removeClass('avatar-loading'); // Remove loading class
+        if(!$(this).hasClass('avatar-loaded')) {
+         $(this).addClass('avatar-waiting'); // Only add waiting class if not loaded
+        }
+      });
+
+      $('.avatar-waiting').mousedown(function(e) {
+        var $this = $(this);
+        clearTimeout($this.downTimer); // Reset timer
+        $this.downTimer = setTimeout(function() {
+          $this.removeClass('avatar-loading').addClass('avatar-loaded'); // After 5 seconds flip the classes
+        }, 5000); 
+      }).mouseup(function(e) {
+        clearTimeout($(this).downTimer); // Reset timer
+      });
+
+    });
+  </script>
+
+</body>
+
+</html>
