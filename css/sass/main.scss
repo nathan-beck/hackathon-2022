@@ -70,6 +70,8 @@ $font-size-l: 1.125rem;
 
 @keyframes avatar-ring-1 {
   to {
+    width: 15.625rem;
+    height: 15.625rem;
     opacity: 0;
   }
 }
@@ -174,7 +176,7 @@ body {
 .avatar {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 10%;
   cursor: pointer;
 }
 
@@ -312,7 +314,7 @@ body {
 
 // Avatar color schemes
 
-.avatar:nth-child(1) {
+.avatar:nth-child(5n+1) {
 
   .avatar-ring,
   .loading-ring,
@@ -321,7 +323,7 @@ body {
   }
 }
 
-.avatar:nth-child(2) {
+.avatar:nth-child(5n+2) {
   transform: translate(200px, 0);
 
   .avatar-ring,
@@ -331,7 +333,7 @@ body {
   }
 }
 
-.avatar:nth-child(3) {
+.avatar:nth-child(5n+3) {
   transform: translate(400px, 0);
 
   .avatar-ring,
@@ -341,7 +343,7 @@ body {
   }
 }
 
-.avatar:nth-child(4) {
+.avatar:nth-child(5n+4) {
   transform: translate(600px, 0);
 
   .avatar-ring,
@@ -351,7 +353,8 @@ body {
   }
 }
 
-.avatar:nth-child(5) {
+.avatar:nth-child(5n+5) {
+  transform: translate(800px, 0);
 
   .avatar-ring,
   .loading-ring,

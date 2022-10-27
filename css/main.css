@@ -35,6 +35,8 @@
 }
 @keyframes avatar-ring-1 {
   to {
+    width: 15.625rem;
+    height: 15.625rem;
     opacity: 0;
   }
 }
@@ -126,7 +128,7 @@ body {
 .avatar {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 10%;
   cursor: pointer;
 }
 
@@ -248,37 +250,40 @@ body {
   background-color: #DF0E62;
 }
 
-.avatar:nth-child(1) .avatar-ring,
-.avatar:nth-child(1) .loading-ring, .avatar:nth-child(1).avatar-loaded .avatar-label {
+.avatar:nth-child(5n+1) .avatar-ring,
+.avatar:nth-child(5n+1) .loading-ring, .avatar:nth-child(5n+1).avatar-loaded .avatar-label {
   background-color: #DF0E62;
 }
 
-.avatar:nth-child(2) {
+.avatar:nth-child(5n+2) {
   transform: translate(200px, 0);
 }
-.avatar:nth-child(2) .avatar-ring,
-.avatar:nth-child(2) .loading-ring, .avatar:nth-child(2).avatar-loaded .avatar-label {
+.avatar:nth-child(5n+2) .avatar-ring,
+.avatar:nth-child(5n+2) .loading-ring, .avatar:nth-child(5n+2).avatar-loaded .avatar-label {
   background-color: #127681;
 }
 
-.avatar:nth-child(3) {
+.avatar:nth-child(5n+3) {
   transform: translate(400px, 0);
 }
-.avatar:nth-child(3) .avatar-ring,
-.avatar:nth-child(3) .loading-ring, .avatar:nth-child(3).avatar-loaded .avatar-label {
+.avatar:nth-child(5n+3) .avatar-ring,
+.avatar:nth-child(5n+3) .loading-ring, .avatar:nth-child(5n+3).avatar-loaded .avatar-label {
   background-color: #FAC70B;
 }
 
-.avatar:nth-child(4) {
+.avatar:nth-child(5n+4) {
   transform: translate(600px, 0);
 }
-.avatar:nth-child(4) .avatar-ring,
-.avatar:nth-child(4) .loading-ring, .avatar:nth-child(4).avatar-loaded .avatar-label {
+.avatar:nth-child(5n+4) .avatar-ring,
+.avatar:nth-child(5n+4) .loading-ring, .avatar:nth-child(5n+4).avatar-loaded .avatar-label {
   background-color: #EC6750;
 }
 
-.avatar:nth-child(5) .avatar-ring,
-.avatar:nth-child(5) .loading-ring, .avatar:nth-child(5).avatar-loaded .avatar-label {
+.avatar:nth-child(5n+5) {
+  transform: translate(800px, 0);
+}
+.avatar:nth-child(5n+5) .avatar-ring,
+.avatar:nth-child(5n+5) .loading-ring, .avatar:nth-child(5n+5).avatar-loaded .avatar-label {
   background-color: #07689F;
 }
 
